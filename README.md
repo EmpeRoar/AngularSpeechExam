@@ -1,3 +1,13 @@
+# Heroku. Setup
+- 1. npm install express --save
+- 2. added server.js (side by side with tsconfig.json)
+- 3. "postinstall": "ng build --aot --prod" in scripts.
+- 4. update  start with "start": "node server.js", in scripts.
+- 5. .disc/AngularSpeechExam   <--- name of repo in github.
+
+
+
+
 # AngularSpeechExam
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
