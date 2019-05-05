@@ -1,3 +1,41 @@
-<p>
-  search works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+             
+              <input type="text" 
+                     class="form-control" 
+                     id="keyword" 
+                     formControlName="searchKeyword" 
+                     placeholder="Speech keyword"
+                     autocomplete="false">
+            </div>
+            <button  type="submit" class="btn  btn-primary mb-2"><i class="fa fa-search"></i> Search  </button>
+
+          
+      </form>
+
+      
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+
+      
+      <div *ngIf="searchResults">
+         <hr>
+          <h4>Search Results</h4>
+          <div *ngFor="let searchResult of searchResults">
+            <div>
+              <div (click)="onClick(searchResult)" class="speech-item">
+                 <h4>{{ searchResult.Title }}</h4>
+                 <span>{{searchResult.Author}}</span> / <span>{{searchResult.Keywords}}</span>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>

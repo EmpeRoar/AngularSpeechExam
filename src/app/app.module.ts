@@ -9,8 +9,6 @@ import { SpeechComponent } from './speech/speech/speech.component';
 import { SpeechlistComponent } from './speech/speechlist/speechlist.component';
 import { SpeechdetailComponent } from './speech/speechdetail/speechdetail.component';
 import { AddspeechComponent } from './speech/addspeech/addspeech.component';
-import { UpdatespeechComponent } from './speech/updatespeech/updatespeech.component';
-import { DeletespeechComponent } from './speech/deletespeech/deletespeech.component';
 import { SearchComponent } from './speech/search/search.component';
 import { SpeechService } from '../app/services/speech.service';
 
@@ -24,8 +22,6 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     SpeechlistComponent,
     SpeechdetailComponent,
     AddspeechComponent,
-    UpdatespeechComponent,
-    DeletespeechComponent,
     SearchComponent
   ],
   imports: [
