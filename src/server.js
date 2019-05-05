@@ -5,12 +5,12 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/angular-speech-exam'));
+app.use(express.static('./dist/AngularSpeechExam'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname,'/dist/angular-speech-exam/index.html'));
+res.sendFile(path.join(__dirname,'/dist/AngularSpeechExam/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 4200);
+app.listen(process.env.PORT || 8080);
