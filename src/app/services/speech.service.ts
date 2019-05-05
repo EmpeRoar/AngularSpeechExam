@@ -49,6 +49,16 @@ export class SpeechService {
 
   }
 
+  DeleteSpeech(speechId: number){
+    if(localStorage.getItem('speeches') !== null){
+      let speeches = JSON.parse(localStorage.getItem('speeches'));       
+      var newListOfSpeech = speeches.filter(x => {
+         return x.Id != speechId
+      });
+      localStorage.setItem('speeches', JSON.stringify(newListOfSpeech)); 
+    }
+  }
+
   AddSpeech(speech: Speech) {
 
     if(localStorage.getItem('speeches') === null){

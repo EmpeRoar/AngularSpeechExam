@@ -1,8 +1,12 @@
 <h4>Speeches</h4>
+<hr>
 <div *ngIf="speeches">
   <div *ngFor="let speech of speeches">
     <div>
-      <div (click)="onClick(speech)" class="speech-item">{{ speech.Title }}</div>
+      <div (click)="onClick(speech)" class="speech-item">
+        {{ speech.Title }}
+      </div>
+      <hr>
     </div>
   </div>
 </div>

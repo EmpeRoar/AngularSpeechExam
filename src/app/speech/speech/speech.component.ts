@@ -9,11 +9,15 @@ import { SpeechViewModel } from 'src/app/model/viewmodel/SpeechViewModel';
 export class SpeechComponent implements OnInit {
 
   public clickedSpeech: SpeechViewModel;
+  public refreshList: boolean;
   constructor() { }
   
   ngOnInit() {
   }
-  childSpeechClicked(speech: SpeechViewModel) {
+  speechClicked(speech: SpeechViewModel) {
     this.clickedSpeech = speech;
+  }
+  refreshSpeechlist(refresh: boolean){
+    this.refreshList = refresh;
   }
 }

@@ -9,14 +9,23 @@ import * as moment from 'moment';
 })
 export class SpeechlistComponent implements OnInit {
 
-  @Output() speechClicked = new EventEmitter<SpeechViewModel>();
+  @Input() refreshInput: boolean;
+  @Output() speechClickedOutput = new EventEmitter<SpeechViewModel>();
   
   speeches: SpeechViewModel[];
 
   constructor(private speechService:SpeechService) { }
 
   ngOnInit() {
-    this.speeches =this.speechService.GetSpeechList().map(x => {
+    this.loadSpeeches();
+  }
+
+  ngOnChanges() {
+    this.loadSpeeches();
+  }
+
+  loadSpeeches() {
+    this.speeches = this.speechService.GetSpeechList().map(x => {
       return {
         "Id":x.Id,
         "Title": x.Title,
@@ -29,7 +38,7 @@ export class SpeechlistComponent implements OnInit {
   }
 
   onClick(speech: SpeechViewModel): void {
-    this.speechClicked.emit(speech);
+    this.speechClickedOutput.emit(speech);
   }
 
 }

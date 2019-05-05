@@ -14,6 +14,8 @@ import { DeletespeechComponent } from './speech/deletespeech/deletespeech.compon
 import { SearchComponent } from './speech/search/search.component';
 import { SpeechService } from '../app/services/speech.service';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { SpeechService } from '../app/services/speech.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot()
   ],
   providers: [SpeechService],
   bootstrap: [AppComponent]

@@ -1,29 +1,40 @@
-<div *ngIf="speech">
+<div *ngIf="speechInput">
 
     <div class="row">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-12">
-                    <h3>{{ speech.Title }}</h3>
+                    <h3>{{ speechInput.Title }}</h3>
                   </div>
             </div>
+            <hr/>
             <div class="row">
-              <div class="col-md-12">
-                {{ speech.Content }}
+              <div class="col-md-12" >
+                <b>Speech:</b>
+                <div [innerHTML]="speechInput.Content"></div>
               </div>
             </div>
+            <hr/>
             <div class="row">
               <div class="col-md-3">
-                  {{ speech.Author }}
+                 <b>Author:</b> {{ speechInput.Author }}
               </div>
               <div class="col-md-3">
-                  {{ speech.Keywords }}
+                <b> Keywords:</b>  {{ speechInput.Keywords }}
               </div>
               <div class="col-md-3">
-                  {{ speech.SpeechDate }}
+                 <b>Speech Date:</b> {{ speechInput.SpeechDate }}
               </div>
             </div>
         </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-md-12">
+         <button class="btn btn-sm btn-danger" (click)="deleteSpeech(speechInput)"><i class="fa fa-trash"></i> Delete</button>
+
+       
       </div>
+    </div>
 
 </div>

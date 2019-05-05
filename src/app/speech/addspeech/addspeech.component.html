@@ -31,10 +31,11 @@
                   <div class="form-row">
                       <div class="form-group col-md-12">
                           <label for="speechContent">Speech Content</label>
-                          <textarea class="form-control" 
+                          <textarea [froalaEditor]="options"  
+                                    class="form-control" 
                                     id="speechContent" 
                                     formControlName="speechcontent"  
-                                    rows="6"
+                                    rows="16"
                                     autocomplete="false"></textarea>
                         </div>
                   </div>
@@ -52,6 +53,14 @@
                           </div>
                       </div>
                   </div>
+
+                  <div class="form-row">
+                      <div class="col-md-12 text-right">
+                          <button  type="submit" class="btn  btn-primary">
+                              <i class="fa fa-floppy-o"></i> Save
+                          </button>
+                      </div>              
+                    </div>
 
               </div>
               <div class="col-md-4">
@@ -107,13 +116,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="form-row">
-                      <div class="col-md-12 text-right">
-                          <button  type="submit" class="btn  btn-primary">
-                              <i class="fa fa-floppy-o"></i> Save
-                          </button>
-                      </div>              
-                    </div>
+                 
               </div>
            </div>
 

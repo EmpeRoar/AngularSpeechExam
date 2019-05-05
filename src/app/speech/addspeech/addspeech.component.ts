@@ -14,6 +14,10 @@ export class AddspeechComponent implements OnInit {
   submitted = false;
   success = false;
 
+  public options: Object = {
+    height:300
+  }
+
   constructor(private formBuilder: FormBuilder,
               private speechService: SpeechService,
               private router: Router) { }
@@ -34,8 +38,16 @@ export class AddspeechComponent implements OnInit {
     if (this.addSpeechForm.invalid) {
         return;
     }
+
+    let count = 0;
+    if(this.speechService.GetSpeechList() == null){
+       count = 0;
+    }else{
+       count = this.speechService.GetSpeechList().length;
+    }
+  
     var speech : Speech = {
-      Id : 1,
+      Id : count + 1,
       Title: this.addSpeechForm.controls.title.value,
       Content : this.addSpeechForm.controls.speechcontent.value,
       Author : {
