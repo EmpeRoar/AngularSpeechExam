@@ -13,30 +13,23 @@ export class SpeechService {
 
   GetSpeechList() {
     
-    // this.speeches = [
-    //   {
-    //     "Id":1,
-    //     "Content":"Hello World Content 1",
-    //     "Keywords":["hello"],
-    //     "Author": { 
-    //       "FirstName":"Julius",
-    //       "LastName":"Bacosa"
-    //     },
-    //     "SpeechDate": new Date(2019,10,10)
-    //   },
-    //   {
-    //     "Id":2,
-    //     "Content":"Hello World Content 2",
-    //     "Keywords":["World","Hello"],
-    //     "Author": { 
-    //       "FirstName":"Faith",
-    //       "LastName":"Bacosa"
-    //     },
-    //     "SpeechDate": new Date(2019,10,10)
-    //   }
-    // ];
-
-    // localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
+    if(this.speeches === null){
+      this.speeches = [
+        {
+          "Id":1,
+          "Title":"Speech of Julius Bacosa",
+          "Content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "Keywords":["julius","speech"],
+          "Author": { 
+            "FirstName":"Julius",
+            "LastName":"Bacosa"
+          },
+          "SpeechDate": new Date(2019,4,19)
+        }
+      ];
+ 
+      localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
+    }
 
    
     if(localStorage.getItem('speeches')){
