@@ -5,6 +5,9 @@
 - 4. update  start with "start": "node server.js", in scripts.
 - 5. .disc/AngularSpeechExam   <--- name of repo in github.
 
+# Boostrap
+- 1. npm install bootstrap jquery popper
+
 # Links:
 - 1. https://medium.com/@avisek.cool/deploy-angular-7-app-on-heroku-quick-and-easy-way-b739001ac90f
 - 2. https://codeburst.io/getting-started-with-angular-7-and-bootstrap-4-styling-6011b206080
