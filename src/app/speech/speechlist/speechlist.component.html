@@ -1,0 +1,13 @@
+
+<div *ngIf="speeches">
+  <div *ngFor="let speech of speeches">
+    <div>
+      {{ speech.Content }}
+    </div>
+    <div>
+      <p>{{ speech.Author }}</p>
+      <p>{{ speech.Keywords }}</p>
+      <p>{{ speech.SpeechDate }}</p>
+    </div>
+  </div>
+</div>
