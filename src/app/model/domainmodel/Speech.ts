@@ -1,7 +1,8 @@
 import { AuthorInformation  } from './AuthorInformation';
 
 export class Speech {
-    Id:string;
+    Id:number;
+    Title:string;
     Content:string;
     Author: AuthorInformation;
     Keywords: string[];

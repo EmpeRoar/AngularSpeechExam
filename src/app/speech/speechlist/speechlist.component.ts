@@ -13,16 +13,16 @@ export class SpeechlistComponent implements OnInit {
   constructor(private speechService:SpeechService) { }
 
   ngOnInit() {
-    var x = this.speechService.GetSpeechList().map(x => {
+    this.speeches =this.speechService.GetSpeechList().map(x => {
       return {
         "Id":x.Id,
+        "Title": x.Title,
         "Content":x.Content,
         "Keywords":x.Keywords.join(),
         "Author": x.Author.FirstName + ' ' + x.Author.LastName,
         "SpeechDate": moment( x.SpeechDate).format("MM-DD-YYYY")
       };
     });
-    this.speeches = x;
 
   }
 

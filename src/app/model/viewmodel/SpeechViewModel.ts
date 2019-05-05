@@ -1,7 +1,8 @@
 import { AuthorInformationViewModel } from './AuthorInformationViewModel';
 
 export class SpeechViewModel {
-    Id:string;
+    Id:number;
+    Title:string;
     Content:string;
     Author: string;
     Keywords: string;

@@ -13,34 +13,32 @@ export class SpeechService {
 
   GetSpeechList() {
     
-    this.speeches = [
-      {
-        "Id":"1",
-        "Content":"Hello World Content 1",
-        "Keywords":["hello"],
-        "Author": { 
-          "Id":"1",
-          "FirstName":"Julius",
-          "LastName":"Bacosa"
-        },
-        "SpeechDate": new Date(2019,10,10)
-      },
-      {
-        "Id":"1",
-        "Content":"Hello World Content 2",
-        "Keywords":["World","Hello"],
-        "Author": { 
-          "Id":"1",
-          "FirstName":"Faith",
-          "LastName":"Bacosa"
-        },
-        "SpeechDate": new Date(2019,10,10)
-      }
-    ];
+    // this.speeches = [
+    //   {
+    //     "Id":1,
+    //     "Content":"Hello World Content 1",
+    //     "Keywords":["hello"],
+    //     "Author": { 
+    //       "FirstName":"Julius",
+    //       "LastName":"Bacosa"
+    //     },
+    //     "SpeechDate": new Date(2019,10,10)
+    //   },
+    //   {
+    //     "Id":2,
+    //     "Content":"Hello World Content 2",
+    //     "Keywords":["World","Hello"],
+    //     "Author": { 
+    //       "FirstName":"Faith",
+    //       "LastName":"Bacosa"
+    //     },
+    //     "SpeechDate": new Date(2019,10,10)
+    //   }
+    // ];
 
-    localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
+    // localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
 
-
+   
     if(localStorage.getItem('speeches')){
       this.speeches = JSON.parse(localStorage.getItem('speeches')); 
     }
@@ -51,9 +49,15 @@ export class SpeechService {
 
   }
 
-  AddSpeech() {
+  AddSpeech(speech: Speech) {
 
     if(localStorage.getItem('speeches') === null){
+      this.speeches = [];
+      this.speeches.push(speech);
+      localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
+    }else{
+      this.speeches = JSON.parse(localStorage.getItem('speeches'));       
+      this.speeches.push(speech);
       localStorage.setItem('speeches', JSON.stringify(this.speeches)); 
     }
 
