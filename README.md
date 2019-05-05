@@ -7,6 +7,7 @@
 
 # Boostrap
 - 1. npm install bootstrap jquery popper
+- https://fontawesome.bootstrapcheatsheets.com/
 
 # Links:
 - 1. https://medium.com/@avisek.cool/deploy-angular-7-app-on-heroku-quick-and-easy-way-b739001ac90f
