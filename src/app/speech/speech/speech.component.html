@@ -2,11 +2,9 @@
 
 <div class="row">
   <div class="col-md-2">
-      <app-speechlist></app-speechlist>
+      <app-speechlist  (speechClicked)="childSpeechClicked($event)"></app-speechlist>
   </div>
   <div class="col-md-10">
-      <div>
-        Hellooo
-      </div>
+     <app-speechdetail [speech]="clickedSpeech" ></app-speechdetail>
   </div>
 </div>

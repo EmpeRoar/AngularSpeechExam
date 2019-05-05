@@ -2,7 +2,7 @@
 <div *ngIf="speeches">
   <div *ngFor="let speech of speeches">
     <div>
-      <a href="#">{{ speech.Title }}</a>
+      <div (click)="onClick(speech)" class="speech-item">{{ speech.Title }}</div>
     </div>
   </div>
 </div>

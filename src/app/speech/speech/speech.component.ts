@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpeechViewModel } from 'src/app/model/viewmodel/SpeechViewModel';
 
 @Component({
   selector: 'app-speech',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeechComponent implements OnInit {
 
+  public clickedSpeech: SpeechViewModel;
   constructor() { }
-
+  
   ngOnInit() {
   }
-
+  childSpeechClicked(speech: SpeechViewModel) {
+    this.clickedSpeech = speech;
+  }
 }

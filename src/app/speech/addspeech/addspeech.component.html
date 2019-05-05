@@ -6,71 +6,118 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
+
+    <div class="col-md-12">
       
         <form [formGroup]="addSpeechForm" (ngSubmit)="onSubmit()">
 
             <h5 *ngIf="success">Your form is valid!</h5>
           
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="authorFirstNameId">FirstName</label>
-                    <input type="text" id="authorFirstNameId" formControlName="authorfirstname"  class="form-control"   placeholder="Firstname">
-                    <div *ngIf="submitted && addSpeechForm.controls.authorfirstname.errors"  class="error">
-                      <div *ngIf="addSpeechForm.controls.authorfirstname.errors.required">Author First Name</div>
+           
+           <div class="row">
+              <div class="col-md-8">
+
+                  <div class="form-row">
+                      <div class="form-group col-md-12">
+                          <label for="title">Title</label>
+                          <input type="text" 
+                                 class="form-control" 
+                                 id="title" 
+                                 formControlName="title" 
+                                 placeholder="Speech Title"
+                                 autocomplete="false">
+                        </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-12">
+                          <label for="speechContent">Speech Content</label>
+                          <textarea class="form-control" 
+                                    id="speechContent" 
+                                    formControlName="speechcontent"  
+                                    rows="6"
+                                    autocomplete="false"></textarea>
+                        </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-12">
+                          <label for="keywords">Keywords</label>
+                          <input type="text" 
+                              id="keywords"  
+                              autocomplete="false"
+                              formControlName="keywords" 
+                              class="form-control" 
+                              placeholder="Keywords">
+                          <div *ngIf="submitted && addSpeechForm.controls.keywords.errors" class="error">
+                            <div *ngIf="addSpeechForm.controls.keywords.errors.required">Keywords</div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="col-md-4">
+                  <div class="form-row">
+                    <div class="col-md-12">
+                          <h5>Author</h5>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="authorFirstNameId">FirstName</label>
+                          <input type="text" 
+                                 id="authorFirstNameId" 
+                                 formControlName="authorfirstname"  
+                                 class="form-control"   
+                                 placeholder="Firstname"
+                                 autocomplete="false">
+                          <div *ngIf="submitted && addSpeechForm.controls.authorfirstname.errors"  class="error">
+                            <div *ngIf="addSpeechForm.controls.authorfirstname.errors.required">Author First Name</div>
+                          </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                
+                        <label for="authorLastNameId">Last Name</label>
+                        <input type="text" 
+                               id="authorLastNameId" 
+                               formControlName="authorlastname"  
+                               class="form-control" 
+                               placeholder="Lastname"
+                               autocomplete="false">
+                        <div *ngIf="submitted && addSpeechForm.controls.authorlastname.errors" class="error">
+                          <div *ngIf="addSpeechForm.controls.authorlastname.errors.required">Author Last Name</div>
+                        </div>
+                
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                        <hr>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-12">
+                          <label for="speechdate">Speech Date</label>
+                          <input type="date" 
+                                 id="speechdate"  
+                                 formControlName="speechdate" 
+                                 class="form-control" 
+                                 placeholder="Date"
+                                 autocomplete="false">
+                          <div *ngIf="submitted && addSpeechForm.controls.speechdate.errors" class="error">
+                            <div *ngIf="addSpeechForm.controls.speechdate.errors.required">Speech Date</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-12 text-right">
+                          <button  type="submit" class="btn  btn-primary">
+                              <i class="fa fa-floppy-o"></i> Save
+                          </button>
+                      </div>              
                     </div>
               </div>
-              <div class="form-group col-md-6">
-          
-                  <label for="authorLastNameId">Last Name</label>
-                  <input type="text" id="authorLastNameId" formControlName="authorlastname"   class="form-control"   placeholder="Lastname">
-                  <div *ngIf="submitted && addSpeechForm.controls.authorlastname.errors" class="error">
-                    <div *ngIf="addSpeechForm.controls.authorlastname.errors.required">Author Last Name</div>
-                  </div>
-          
-              </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" formControlName="title" placeholder="Speech Title">
-                  </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="speechContent">Speech Content</label>
-                    <textarea class="form-control" id="speechContent" formControlName="speechcontent"  rows="6"></textarea>
-                  </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="speechdate">Speech Date</label>
-                    <input type="date" 
-                        id="speechdate"  
-                        formControlName="speechdate" 
-                        class="form-control" 
-                        placeholder="Date">
-                    <div *ngIf="submitted && addSpeechForm.controls.speechdate.errors" class="error">
-                      <div *ngIf="addSpeechForm.controls.speechdate.errors.required">Speech Date</div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="keywords">Keywords</label>
-                    <input type="text" 
-                        id="keywords"  
-                        formControlName="keywords" 
-                        class="form-control" 
-                        placeholder="Keywords">
-                    <div *ngIf="submitted && addSpeechForm.controls.keywords.errors" class="error">
-                      <div *ngIf="addSpeechForm.controls.keywords.errors.required">Keywords</div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-              <input type="submit" value="Add Speech" class="btn btn-xs btn-success">
-            </div>
+           </div>
+
+           
           
             
           

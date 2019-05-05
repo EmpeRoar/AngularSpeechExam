@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { SpeechService } from 'src/app/services/speech.service';
 import { SpeechViewModel } from 'src/app/model/viewmodel/SpeechViewModel';
 import * as moment from 'moment';
@@ -9,7 +9,10 @@ import * as moment from 'moment';
 })
 export class SpeechlistComponent implements OnInit {
 
+  @Output() speechClicked = new EventEmitter<SpeechViewModel>();
+  
   speeches: SpeechViewModel[];
+
   constructor(private speechService:SpeechService) { }
 
   ngOnInit() {
@@ -23,7 +26,10 @@ export class SpeechlistComponent implements OnInit {
         "SpeechDate": moment( x.SpeechDate).format("MM-DD-YYYY")
       };
     });
+  }
 
+  onClick(speech: SpeechViewModel): void {
+    this.speechClicked.emit(speech);
   }
 
 }

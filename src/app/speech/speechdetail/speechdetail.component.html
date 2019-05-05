@@ -1,3 +1,29 @@
-<p>
-  speechdetail works!
-</p>
+<div *ngIf="speech">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{{ speech.Title }}</h3>
+                  </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                {{ speech.Content }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                  {{ speech.Author }}
+              </div>
+              <div class="col-md-3">
+                  {{ speech.Keywords }}
+              </div>
+              <div class="col-md-3">
+                  {{ speech.SpeechDate }}
+              </div>
+            </div>
+        </div>
+      </div>
+
+</div>
